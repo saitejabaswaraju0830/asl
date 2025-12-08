@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ASL Digital Marketing - Expert in Social Media, Google Ads, YouTube, ShareChat & Moj Ads">
+    <title>ASL Digital Marketing | Grow Your Business Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #042f2e;
+            --secondary: #064e3b;
+            --accent: #eab308;
+            --accent2: #06b6d4;
+            --light: #f0fdfa;
+            --dark: #042f2e;
+            --gray: #94a3b8;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Segoe UI',sans-serif; line-height:1.6; color:#e2e8f0; background:#000; overflow-x:hidden; }
+        a { text-decoration:none; }
+        .container { width:90%; max-width:1200px; margin:0 auto; position:relative; z-index:2; }
+        #particles { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1; }
+        .particle { position:absolute; background:var(--accent2); border-radius:50%; opacity:0.18; animation:float 28s infinite linear; }
+        @keyframes float { 0% { transform:translateY(100vh) translateX(-120px); } 100% { transform:translateY(-200px) translateX(120px); } }
+        header { background:linear-gradient(135deg,var(--primary),var(--secondary)); color:white; padding:1.2rem 0; position:fixed; width:100%; top:0; z-index:1000; box-shadow:0 12px 35px rgba(0,0,0,0.5); backdrop-filter:blur(15px); }
+        .header-content { display:flex; justify-content:space-between; align-items:center; }
+        .logo { font-size:2.6rem; font-weight:900; letter-spacing:1.5px; }
+        .logo span { color:var(--accent); text-shadow:0 0 30px rgba(234,179,8,0.9); animation:glow 2s infinite alternate; }
+        @keyframes glow { from { text-shadow:0 0 20px rgba(234,179,8,0.7); } to { text-shadow:0 0 45px rgba(234,179,8,1); } }
+        nav ul { display:flex; list-style:none; gap:2.8rem; }
+        nav a { color:white; font-weight:700; font-size:1.1rem; position:relative; transition:0.4s; }
+        nav a::after { content:''; position:absolute; width:0; height:3px; bottom:-10px; left:50%; background:var(--accent); transition:0.4s; border-radius:3px; }
+        nav a:hover::after { width:100%; left:0; }
+        #hero { background:linear-gradient(rgba(0,0,0,0.88),rgba(0,0,0,0.88)),url('https://source.unsplash.com/random/1600x900/?digital-marketing,technology') center/cover no-repeat; color:white; text-align:center; padding:260px 0 180px; }
+        .hero-title { font-size:4.8rem; font-weight:900; background:linear-gradient(90deg,var(--accent),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:1rem; }
+        .hero-subtitle { font-size:1.9rem; margin:1.8rem 0 2.5rem; opacity:0.95; }
+        .btn { display:inline-block; padding:1.4rem 3.2rem; border-radius:60px; font-weight:700; font-size:1.1rem; transition:0.5s; margin:1rem; box-shadow:0 15px 40px rgba(0,0,0,0.4); }
+        .btn-primary { background:var(--accent); color:#000; }
+        .btn-primary:hover { background:var(--accent2); transform:translateY(-12px) scale(1.1); box-shadow:0 30px 60px rgba(6,182,212,0.6); }
+        .btn-wa { background:#25D366; color:white; }
+        .btn-wa:hover { background:#128C7E; transform:translateY(-12px) scale(1.1); }
+        section { padding:130px 0; }
+        .section-title { font-size:3.2rem; text-align:center; margin-bottom:1.5rem; color:#06b6d4; position:relative; }
+        .section-title::after { content:''; width:110px; height:6px; background:var(--accent); display:block; margin:25px auto; border-radius:6px; }
+        .about-section { background:#042f2e; color:#e2e8f0; }
+        .about-text { max-width:1000px; margin:0 auto 5rem; text-align:center; font-size:1.35rem; line-height:2; opacity:0.92; }
+        .stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:3.5rem; text-align:center; }
+        .stat-number { font-size:4rem; font-weight:900; color:var(--accent); }
+        .stat-label { font-size:1.3rem; color:#94a3b8; margin-top:0.8rem; }
+        .why-section { background:linear-gradient(135deg,var(--primary),var(--secondary)); color:white; }
+        .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:3rem; }
+        .why-card { background:rgba(255,255,255,0.12); backdrop-filter:blur(12px); padding:3.5rem 2.5rem; border-radius:30px; text-align:center; transition:0.6s; border:1px solid rgba(255,255,255,0.15); }
+        .why-card:hover { transform:translateY(-25px); background:rgba(255,255,255,0.22); box-shadow:0 30px 60px rgba(0,0,0,0.3); }
+        .why-card h3 { font-size:2.5rem; margin-bottom:1.2rem; color:var(--accent); }
+        .services-grid, .pricing-grid, .testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2.8rem; }
+        .service-card, .pricing-card, .testimonial-card { background:white; color:#333; padding:3.2rem 2.2rem; border-radius:28px; text-align:center; box-shadow:0 22px 55px rgba(0,0,0,0.18); transition:0.6s; position:relative; overflow:hidden; }
+        .service-card:hover, .pricing-card:hover, .testimonial-card:hover { transform:translateY(-28px) scale(1.05); box-shadow:0 35px 70px rgba(0,0,0,0.35); }
+        .service-card::before, .pricing-card::before { content:''; position:absolute; top:-60%; left:-60%; width:220%; height:220%; background:linear-gradient(45deg,transparent,rgba(234,179,8,0.2),transparent); transform:rotate(45deg); opacity:0; transition:1s; }
+        .service-card:hover::before, .pricing-card:hover::before { opacity:1; animation:shine 1.8s; }
+        @keyframes shine { 0% { transform:translateX(-120%) translateY(-120%) rotate(45deg); } 100% { transform:translateX(120%) translateY(120%) rotate(45deg); } }
+        .service-icon { font-size:5rem; color:var(--accent); margin-bottom:1.8rem; }
+        .pricing-card .price { font-size:3rem; color:var(--accent); font-weight:900; margin:1.8rem 0; }
+        .bar { height:38px; background:linear-gradient(90deg,var(--accent),var(--accent2)); border-radius:20px; width:0; transition:width 2.8s ease-out; }
+        .bar.animate { width:inherit; }
+        .stars { color:var(--accent); font-size:1.8rem; margin-top:1rem; }
+        #contact { background:var(--light); color:#333; }
+        .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:start; }
+        form { background:white; padding:4rem; border-radius:30px; box-shadow:0 30px 70px rgba(0,0,0,0.18); }
+        input, textarea { width:100%; padding:1.3rem; margin-bottom:1.8rem; border:1px solid #ddd; border-radius:14px; font-family:inherit; font-size:1.1rem; transition:0.4s; }
+        input:focus, textarea:focus { outline:none; border-color:var(--accent); box-shadow:0 0 25px rgba(234,179,8,0.35); }
+        footer { background:var(--dark); color:white; padding:6rem 0 2.5rem; position:relative; }
+        footer::before { content:''; position:absolute; top:0; left:0; width:100%; height:8px; background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent)); }
+        .footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:3.5rem; margin-bottom:4rem; }
+        .footer-col h3 { color:var(--accent); margin-bottom:2rem; font-size:1.8rem; }
+        .copyright { text-align:center; padding-top:2.5rem; border-top:1px solid #334155; color:#64748b; font-size:1.1rem; }
+        @media (max-width:768px) {
+            .hero-title { font-size:3.3rem; }
+            .hero-subtitle { font-size:1.4rem; }
+            .contact-grid { grid-template-columns:1fr; }
+            nav ul { flex-direction:column; gap:1.8rem; }
+            .stats-grid { grid-template-columns:1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="particles"></div>
+
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">ASL <span>Digital Marketing</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section id="hero" data-aos="zoom-in">
+    <div class="container">
+        <h1 class="hero-title">Grow Your Business with ASL Digital Marketing</h1>
+        <p class="hero-subtitle">Meta Ads • Google Ads • ShareChat • Moj • WhatsApp • YouTube Marketing</p>
+        <a href="#contact" class="btn btn-primary">Get Free Consultation</a>
+        <a href="https://wa.me/919182189120" class="btn btn-wa">WhatsApp Now</a>
+    </div>
+</section>
+
+<section id="services" data-aos="fade-up">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card" data-aos="flip-left" data-aos-delay="100">
+               FB & Instagram
+                <h3>Facebook & Instagram Marketing</h3>
+                <p>High-converting ads on Meta platforms</p>
+            </div>
+            <div class="service-card" data-aos="flip-left" data-aos-delay="200">
+                Google
+                <h3>Google Ads</h3>
+                <p>Sponsored & Search-by-Name Ads All India</p>
+            </div>
+            <div class="service-card" data-aos="flip-left" data-aos-delay="300">
+                YouTube
+                <h3>YouTube Marketing</h3>
+                <p>Video ads & channel growth</p>
+            </div>
+            <div class="service-card" data-aos="flip-left" data-aos-delay="400">
+                ShareChat & Moj
+                <h3>ShareChat & Moj Ads</h3>
+                <p>Regional targeting in AP & Telangana</p>
+            </div>
+            <div class="service-card" data-aos="flip-left" data-aos-delay="500">
+                WhatsApp
+                <h3>WhatsApp Marketing</h3>
+                <p>Direct customer reach campaigns</p>
+            </div>
+            <div class="service-card" data-aos="flip-left" data-aos-delay="600">
+                Website
+                <h3>Website Design</h3>
+                <p>Fast, responsive & converting websites</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about-section" data-aos="fade-up">
+    <div class="container">
+        <h2 class="section-title">About ASL Digital Marketing</h2>
+        <p class="about-text">With over 9 years of experience, we specialize in performance-driven digital marketing that delivers real results. From Meta Ads to Google and regional platforms like ShareChat & Moj, we help businesses across India grow faster.</p>
+        <div class="stats-grid">
+            <div data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-number counter" data-target="200">0</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-number counter" data-target="1000000">0</div>
+                <div class="stat-label">Leads Generated</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-number counter" data-target="98">0</div>
+                <div class="stat-label">% Retention</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="why-us" class="why-section" data-aos="fade-up">
+    <div class="container">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="why-grid">
+            <div class="why-card" data-aos="zoom-in" data-aos-delay="100">
+                <h3>Commitment</h3>
+                <p>99% Client Satisfaction Rate</p>
+            </div>
+            <div class="why-card" data-aos="zoom-in" data-aos-delay="200">
+                <h3>Experience</h3>
+                <p>120+ Successful Campaigns</p>
+            </div>
+            <div class="why-card" data-aos="zoom-in" data-aos-delay="300">
+                <h3>Growth</h3>
+                <p>5 Lakh+ Reach Achieved</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="pricing" data-aos="fade-up">
+    <div class="container">
+        <h2 class="section-title">Our Best Plans</h2>
+        <div style="margin-bottom:5rem;">
+            <h3 style="text-align:center; color:var(--accent); font-size:2.4rem; margin-bottom:2.8rem;">Meta Ads (Facebook & Instagram)</h3>
+            <div class="pricing-grid">
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Basic</h4>
+                    <div class="price">₹1,499 / 2 Days</div>
+                    <ul style="list-style:none; text-align:left; margin:2rem 0;">
+                        <li>2 Days Ads on FB & IG</li>
+                        <li>1 Creative Design</li>
+                        <li>Audience Setup</li>
+                        <li>WhatsApp Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Choose Plan</a>
+                </div>
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                    <h4>Standard</h4>
+                    <div class="price">₹4,200 / Week</div>
+                    <ul style="list-style:none; text-align:left; margin:2rem 0;">
+                        <li>7 Days Continuous Ads</li>
+                        <li>5 Posters/Reels</li>
+                        <li>Targeting & Optimization</li>
+                        <li>Daily Report</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Choose Plan</a>
+                </div>
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+                    <h4>Premium</h4>
+                    <div class="price">₹18,000 / Month</div>
+                    <ul style="list-style:none; text-align:left; margin:2rem 0;">
+                        <li>30 Days Full Campaign</li>
+                        <li>20+ Creatives</li>
+                        <li>Carousel & Reels</li>
+                        <li>Full Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom:5rem;">
+            <h3 style="text-align:center; color:var(--accent); font-size:2.4rem; margin-bottom:2.8rem;">Google Ads</h3>
+            <div class="pricing-grid">
+                <div class="pricing-card" data-aos="fade-up"><h4>7 Days</h4><div class="price">₹9,000</div><ul style="list-style:none; margin:2rem 0;"><li>Sponsored Ads</li><li>Search by Names</li><li>All India Reach</li></ul><a href="#contact" class="btn btn-primary">Choose</a></div>
+                <div class="pricing-card" data-aos="fade-up"><h4>15 Days</h4><div class="price">₹18,000</div><ul style="list-style:none; margin:2rem 0;"><li>Sponsored Ads</li><li>Search by Names</li><li>All India Reach</li></ul><a href="#contact" class="btn btn-primary">Choose</a></div>
+                <div class="pricing-card" data-aos="fade-up"><h4>30 Days</h4><div class="price">₹36,000</div><ul style="list-style:none; margin:2rem 0;"><li>Sponsored Ads</li><li>Search by Names</li><li>All India Reach</li></ul><a href="#contact" class="btn btn-primary">Choose</a></div>
+            </div>
+        </div>
+        <div>
+            <h3 style="text-align:center; color:var(--accent); font-size:2.4rem; margin-bottom:2.8rem;">ShareChat & Moj Ads</h3>
+            <div class="pricing-grid">
+                <div class="pricing-card" data-aos="fade-up"><h4>7 Days</h4><div class="price">₹4,200 (GST Incl.)</div><ul style="list-style:none; margin:2rem 0;"><li>AP & Telangana</li><li>High Regional Reach</li></ul><a href="#contact" class="btn btn-primary">Choose</a></div>
+                <div class="pricing-card" data-aos="fade-up"><h4>15 Days</h4><div class="price">₹9,000 (GST Incl.)</div><ul style="list-style:none; margin:2rem 0;"><li>AP & Telangana</li><li>High Regional Reach</li></ul><a href="#contact" class="btn btn-primary">Choose</a></div>
+                <div class="pricing-card" data-aos="fade-up"><h4>30 Days</h4><div class="price">₹18,000 (GST Incl.)</div><ul style="list-style:none; margin:2rem 0;"><li>AP & Telangana</li><li>High Regional Reach</li></ul><a href="#contact" class="btn btn-primary">Choose</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="results" data-aos="fade-up" style="background:var(--light); color:#333;">
+    <div class="container">
+        <h2 class="section-title" style="color:var(--dark);">Our Results</h2>
+        <div style="max-width:1000px; margin:0 auto;">
+            <div style="margin-bottom:2.2rem;"><div style="font-weight:700; font-size:1.4rem;">Jobs - 100%</div><div class="bar" style="width:100%;"></div></div>
+            <div style="margin-bottom:2.2rem;"><div style="font-weight:700; font-size:1.4rem;">Real Estate - 92%</div><div class="bar" style="width:92%;"></div></div>
+            <div style="margin-bottom:2.2rem;"><div style="font-weight:700; font-size:1.4rem;">Gold Buyers - 95%</div><div class="bar" style="width:95%;"></div></div>
+            <div style="margin-bottom:2.2rem;"><div style="font-weight:700; font-size:1.4rem;">Loans - 90%</div><div class="bar" style="width:90%;"></div></div>
+            <div style="margin-bottom:2.2rem;"><div style="font-weight:700; font-size:1.4rem;">Hospitals - 80%</div><div class="bar" style="width:80%;"></div></div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" data-aos="fade-up">
+    <div class="container">
+        <h2 class="section-title">Client Reviews</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <p style="font-style:italic; font-size:1.3rem;">"Best ROI we've ever seen from digital ads!"</p>
+                <p style="font-weight:700; margin:2rem 0;">Rajesh Kumar, Real Estate</p>
+                <div class="stars">5 stars</div>
+            </div>
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <p style="font-style:italic; font-size:1.3rem;">"Google Ads brought customers searching our name directly!"</p>
+                <p style="font-weight:700; margin:2rem 0;">Dr. Priya, Hospital Owner</p>
+                <div class="stars">5 stars</div>
+            </div>
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                <p style="font-style:italic; font-size:1.3rem;">"ShareChat campaign gave us 500+ leads in 15 days!"</p>
+                <p style="font-weight:700; margin:2rem 0;">Srinivas, Gold Buyer</p>
+                <div class="stars">5 stars</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" data-aos="fade-up">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-grid">
+            <div>
+                <h3 style="color:var(--dark); margin-bottom:3rem; font-size:2.3rem;">Contact Information</h3>
+                <div style="display:flex; align-items:center; margin-bottom:2.5rem; font-size:1.4rem;">
+                    <i class="fas fa-phone" style="font-size:3rem; color:var(--accent); margin-right:2rem;"></i>
+                    <div><strong>Phone</strong><br>+91 91821 89120</div>
+                </div>
+                <div style="display:flex; align-items:center; margin-bottom:2.5rem; font-size:1.4rem;">
+                    <i class="fas fa-envelope" style="font-size:3rem; color:var(--accent); margin-right:2rem;"></i>
+                    <div><strong>Email</strong><br>asldigitalmarketing95@gmail.com</div>
+                </div>
+                <div style="display:flex; align-items:center; margin-bottom:2.5rem; font-size:1.4rem;">
+                    <i class="fas fa-map-marker-alt" style="font-size:3rem; color:var(--accent); margin-right:2rem;"></i>
+                    <div><strong>Address</strong><br>Plot No 4/2, Madhapur, Hyderabad</div>
+                </div>
+            </div>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Your Phone" required>
+                <textarea rows="7" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>ASL <span style="color:var(--accent)">Digital Marketing</span></h3>
+                <p>Growing businesses across India with powerful digital advertising since 2016.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul style="list-style:none;">
+                    <li><a href="#hero" style="color:#cbd5e1;">Home</a></li>
+                    <li><a href="#services" style="color:#cbd5e1;">Services</a></li>
+                    <li><a href="#pricing" style="color:#cbd5e1;">Pricing</a></li>
+                    <li><a href="#contact" style="color:#cbd5e1;">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <p>
+                    <a href="#" style="font-size:3rem; margin-right:2rem; color:var(--accent);"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="font-size:3rem; margin-right:2rem; color:var(--accent);"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="font-size:3rem; color:var(--accent);"><i class="fab fa-whatsapp"></i></a>
+                </p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 ASL Digital Marketing. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1300, once: true });
+
+    for(let i=0; i<90; i++){
+        const p = document.createElement('div');
+        p.classList.add('particle');
+        p.style.width = p.style.height = Math.random()*9 + 2 + 'px';
+        p.style.left = Math.random()*100 + 'vw';
+        p.style.animationDuration = Math.random()*35 + 25 + 's';
+        p.style.animationDelay = Math.random()*20 + 's';
+        document.getElementById('particles').appendChild(p);
+    }
+
+    document.querySelectorAll('.counter').forEach(counter => {
+        const target = counter.getAttribute('data-target');
+        const final = target >= 1000000 ? (target/1000000)+'M+' : target < 100 ? target+'+' : target+'%';
+        const increment = target / 280;
+        const update = () => {
+            const count = +counter.innerText.replace(/[^\d]/g,'');
+            if(count < target){
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(update, 12);
+            } else counter.innerText = final;
+        };
+        const observer = new IntersectionObserver(entries => {
+            if(entries[0].isIntersecting) update();
+        }, { threshold: 0.7 });
+        observer.observe(counter.parentElement);
+    });
+
+    const resultObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.querySelectorAll('.bar').forEach(bar => bar.classList.add('animate'));
+            }
+        });
+    }, { threshold: 0.7 });
+    document.querySelectorAll('#results').forEach(sec => resultObserver.observe(sec));
+</script>
+</body>
+</html>
