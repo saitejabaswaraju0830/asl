@@ -879,6 +879,120 @@ html, body {
   }
 }
 
+/* Floating WhatsApp Button - Black & Gold */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  left: 20px; /* LEFT SIDE */
+  z-index: 10001;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-btn {
+  display: block;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 0 0 rgba(244,178,35,0.7);
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(244,178,35,0.3);
+}
+
+/* WhatsApp ICON */
+.whatsapp-btn::before {
+  content: ''; /* Font Awesome WA Icon */
+  font-family: "Font Awesome 5 Brands";
+  font-size: 1.7rem;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+/* TEXT ON HOVER */
+.whatsapp-btn::after {
+  content: 'WHATSAPP';
+  position: absolute;
+  left: -100%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #1a1a1a;
+  font-weight: 900;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Effects */
+.whatsapp-btn:hover {
+  transform: scale(1.15) translateY(-6px);
+  width: 150px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  box-shadow: 0 20px 40px rgba(255,215,0,0.4), 0 0 30px rgba(255,215,0,0.6);
+  border-color: rgba(255,215,0,0.8);
+}
+
+.whatsapp-btn:hover::before {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+.whatsapp-btn:hover::after {
+  left: 18px;
+  opacity: 1;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% { 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 0 0 rgba(244,178,35,0.7);
+  }
+  50% { 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 0 12px rgba(244,178,35,0.3);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .floating-whatsapp {
+    bottom: 16px;
+    left: 16px;
+  }
+  .whatsapp-btn {
+    width: 52px;
+    height: 52px;
+  }
+  .whatsapp-btn:hover {
+    width: 130px;
+  }
+  .whatsapp-btn::before {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .floating-whatsapp { 
+    bottom: 12px; 
+    left: 12px; 
+  }
+}
+
   </style>
 </head>
 <body>
@@ -1499,6 +1613,10 @@ html, body {
 <div class="floating-call">
   <a href="tel:+918074306460" class="call-btn"></a>
 </div>
+<!-- Floating WhatsApp Button -->
+<div class="floating-whatsapp">
+  <a href="https://wa.me/918074306460" class="whatsapp-btn"></a>
+</div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
@@ -1672,4 +1790,5 @@ Best regards`;
   </script>
 </body>
 </html>
+
 
